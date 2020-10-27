@@ -1,4 +1,3 @@
-# FastAPI + GraphQL
 # Developing an API with FastAPI and GraphQL
 
 ## Want to learn how to build this?
