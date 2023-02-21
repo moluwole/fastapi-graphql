@@ -1,7 +1,7 @@
-fastapi==0.61.1
-graphene==2.1.8
-graphene-pydantic==0.1.0
-orator==0.9.9
-psycopg2-binary==2.8.6
-pytest==6.1.1
-uvicorn==0.12.2
+fastapi==0.92.0
+httpx==0.23.3
+masonite-orm==2.18.6
+psycopg2-binary==2.9.5
+pytest==7.2.1
+strawberry-graphql[fastapi]==0.158.0
+uvicorn==0.20.0

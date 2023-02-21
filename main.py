@@ -1,13 +1,16 @@
-import graphene
+import strawberry
 from fastapi import FastAPI
-from starlette.graphql import GraphQLApp
+from strawberry.fastapi import GraphQLRouter
 
-from schema import Query, Mutation
+from core import Mutation, Query
 
+
+schema = strawberry.Schema(query=Query, mutation=Mutation)
+graphql_app = GraphQLRouter(schema)
 app = FastAPI()
+app.include_router(graphql_app, prefix="/graphql")
 
-app.add_route('/graphql', GraphQLApp(schema=graphene.Schema(query=Query, mutation=Mutation)))
 
-@app.get('/')
+@app.get("/")
 def ping():
-    return {'ping': 'pong'}
+    return {"ping": "pong"}
