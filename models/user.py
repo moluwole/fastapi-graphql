@@ -1,18 +1,20 @@
-from orator.orm import has_many
+""" User Model """
 
-from db import Model
+from masoniteorm.models import Model
+from masoniteorm.relationships import has_many
 
 
 class User(Model):
+    """User Model"""
 
-    @has_many
+    @has_many("id", "user_id")
     def posts(self):
-        from .post import Post
+        from .Post import Post
 
         return Post
 
-    @has_many
+    @has_many("id", "user_id")
     def comments(self):
-        from .comment import Comments
+        from .Comment import Comment
 
-        return Comments
+        return Comment

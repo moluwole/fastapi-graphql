@@ -1,6 +1,9 @@
-from db import Model
+""" Comment Model """
+
+from masoniteorm.models import Model
 
 
-class Comments(Model):
+class Comment(Model):
+    """Comment Model"""
 
     pass

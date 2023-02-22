@@ -1,12 +1,14 @@
-from orator.orm import has_many
+""" Post Model """
 
-from db import Model
+from masoniteorm.models import Model
+from masoniteorm.relationships import has_many
 
 
 class Post(Model):
+    """Post Model"""
 
-    @has_many
+    @has_many("id", "post_id")
     def comments(self):
-        from .comment import Comments
+        from .Comment import Comment
 
-        return Comments
+        return Comment
